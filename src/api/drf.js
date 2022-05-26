@@ -1,4 +1,4 @@
-const HOST = "https://achca-movie.netlify.app/api/v1/";
+const HOST = "https://achca.herokuapp.com//api/v1/";
 
 const ACCOUNTS = "accounts/";
 const COMMUNITY = "community/";
