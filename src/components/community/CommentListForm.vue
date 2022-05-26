@@ -1,10 +1,8 @@
 <template>
-  <div >
+  <div>
     <!-- <form @submit.prevent="onSubmit" class="comment-list-form" > -->
-      <v-form
-
-      >      
-        <v-text-field
+    <v-form>
+      <v-text-field
         dark
         label="댓글을 작성하세요."
         hide-details="auto"
@@ -15,10 +13,12 @@
       ></v-text-field>
       <!-- <v-btn large id="btn" @click="onSubmit">댓글 작성</v-btn> -->
       <!-- <p align="right"> -->
-        <v-btn class="ma-1" color="purple" plain large @click="onSubmit">댓글 작성</v-btn>
+      <v-btn class="ma-1" color="purple" plain large @click="onSubmit"
+        >댓글 작성</v-btn
+      >
       <!-- </p> -->
     </v-form>
-  
+
     <!-- </form> -->
   </div>
 </template>
@@ -26,29 +26,29 @@
 <script>
 // import { VueEditor } from "vue2-editor";
 
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: 'CommentListForm',
-  components:{
+  name: "CommentListForm",
+  components: {
     // VueEditor,
   },
   data() {
     return {
-      content: ''
-    }
+      content: "",
+    };
   },
   computed: {
-    ...mapGetters(['article']),
+    ...mapGetters(["article"]),
   },
   methods: {
-    ...mapActions(['createComment']),
+    ...mapActions(["createComment"]),
     onSubmit() {
-      this.createComment({ articlePk: this.article.pk, content: this.content, })
-      this.content = ''
-    }
-  }
-}
+      this.createComment({ articlePk: this.article.pk, content: this.content });
+      this.content = "";
+    },
+  },
+};
 </script>
 
 <style>
